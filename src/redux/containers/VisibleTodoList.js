@@ -23,7 +23,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return{
-        onTodoClick : bindActionCreators(TodoActions,dispatch)
+        actions : bindActionCreators(TodoActions,dispatch)
     }
 }
 
