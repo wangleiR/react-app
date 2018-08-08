@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import HelloMessage from './component/HelloMessage.js';
-import ReactDOM from 'react-dom';
 import Clock from './component/Clock.js';
 import Toggle from './component/Toggle';
 import LoginControl from './component/LoginControl';
-import NumberList from './component/NumberList';
 import Calculator from './component/Calculator';
 
-class App extends Component {
+class Bpp extends Component {
 
   constructor(props) {
     super(props);
@@ -52,4 +50,4 @@ class App extends Component {
 
 
 
-export default App;
+export default Bpp;
