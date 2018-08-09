@@ -10,19 +10,20 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "reselect": "^3.0.1"
   },
   "scripts": {
     "build-css": "node-sass src/sass -o src/css",
     "watch-css": "npm run build-css && node-sass src/sass -o src/css --watch --recursive",
     "start-f": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-f",
+    "start": "npm-run-all -p start-f",
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "node-sass": "^4.8.3",
+    "node-sass": "^4.9.2",
     "npm-run-all": "^4.1.2",
     "react-app-rewired": "^1.5.0",
     "redux-devtools": "^3.4.1",

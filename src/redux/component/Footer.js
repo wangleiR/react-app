@@ -1,5 +1,6 @@
 import React from 'react'
 import FilterLink from '../containers/FilterLink'
+import PropTypes from 'prop-types'
 
 const SHOW_ALL = 'SHOW_ALL'
 const SHOW_COMPLETED = 'SHOW_COMPLETED'
@@ -12,7 +13,7 @@ const FILTER_TITLES = {
 }
 
 const Footer = (props) => {
-    const { activeCount } = props
+    const { activeCount, completeCount, onClearCompleted } = props;
     const itemWord = activeCount === 1 ? 'item' : 'items'
 
     return (
@@ -34,8 +35,22 @@ const Footer = (props) => {
                     )
                 }
             </ul>
+            {
+                !!completeCount &&
+                <button
+                    className="clear-completed"
+                    onClick={onClearCompleted}
+                >
+                    Clear completed
+                </button>
+            }
         </footer>
     )
-}
+};
+Footer.propTypes = {
+    completeCount: PropTypes.number.isRequired,
+    activeCount: PropTypes.number.isRequired,
+    onClearCompleted: PropTypes.func.isRequired,
+};
 
 export default Footer

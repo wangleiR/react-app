@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Footer from './Footer'
 import VisibleTodoList from '../containers/VisibleTodoList'
 
-const MainSection = ({todosCount, actions}) =>
+const MainSection = ({todosCount, completeCount, actions}) =>
     (
         <section className="main">
             {
@@ -17,6 +17,8 @@ const MainSection = ({todosCount, actions}) =>
             {
                 <Footer
                     activeCount={todosCount}
+                    completeCount={completeCount}
+                    onClearCompleted={actions.clearCompleted}
                 />
             }
         </section>
@@ -24,6 +26,7 @@ const MainSection = ({todosCount, actions}) =>
 
 MainSection.propTypes = {
     todosCount: PropTypes.number.isRequired,
+    completedCount: PropTypes.number.isRequired,
     actions: PropTypes.object.isRequired
 }
 

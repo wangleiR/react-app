@@ -13,14 +13,6 @@ import {
 
 const { SHOW_ALL } = VisibilityFilters
 
-const initialState = [
-    {
-        text: 'Use Redux',
-        completed: false,
-        id: 0
-    }
-]
-
 function visibilityFilter( state = SHOW_ALL ,action) {
     switch (action.type) {
         case SET_VISIBILITY_FILLER:
