@@ -4,15 +4,13 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import todoApp from './redux/reducers'
-import App from './redux/component/App'
-import './redux/index.css'
-import { BrowserRouter, Route ,Switch} from 'react-router-dom'
-import Root from './redux/component/Root'
+import TodoMVCApp from './redux/component/TodoMVCApp'
 
-import './index.css';
-import Bpp from './App';
+import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
+
+// import './index.css';
+import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-
 
 let store = createStore(todoApp)
 
@@ -20,12 +18,23 @@ render(
     <Provider store={store}>
         <BrowserRouter>
             <div>
-            {/*<switch>*/}
-                <Route exact path="/" component={Bpp} />
-                <Route path="/app" component={App} />
-            {/*</switch>*/}
+            <header>
+                <nav>
+                    <ul>
+                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='/todoMVCApp'>ToDoMVC</Link></li>
+                    </ul>
+                </nav>
+            </header>
+            <div>
+                <Switch>
+                    <Route exact path="/" component={App} />
+                    <Route path="/todoMVCApp" component={TodoMVCApp} />
+                </Switch>
+            </div>
             </div>
         </BrowserRouter>
+
     </Provider>,
     document.getElementById('root')
 )

@@ -1,13 +1,13 @@
 import React from 'react'
 import AddTodo from '../containers/AddTodo'
 import MainSection from '../containers/MainSection'
+import '../index.css'
 
-
-const App = () => (
+const TodoMVCApp = () => (
     <div>
         <AddTodo/>
         <MainSection/>
     </div>
 )
 
-export default App
+export default TodoMVCApp
