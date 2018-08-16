@@ -4,11 +4,8 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import todoApp from './redux/reducers'
-import TodoMVCApp from './redux/component/TodoMVCApp'
-
+import TodoMVCApp from './redux/TodoMVCApp'
 import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
-
-// import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 

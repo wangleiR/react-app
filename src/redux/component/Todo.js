@@ -6,14 +6,14 @@ export default class Todo extends React.Component {
         todo: PropTypes.object.isRequired,
         deleteTodo: PropTypes.func.isRequired,
         completeTodo: PropTypes.func.isRequired
-    }
+    };
 
     render() {
         const { todo, completeTodo, deleteTodo } = this.props
 
         let element = (
                 <div className="view">
-                    <input className="toggle"
+                    <input className="toggle input"
                            type="checkbox"
                            checked={todo.completed}
                            onChange={() => completeTodo(todo.id)} />
@@ -23,7 +23,7 @@ export default class Todo extends React.Component {
                     <button className="destroy"
                             onClick={() => deleteTodo(todo.id)} />
                 </div>
-            )
+            );
 
         return (
             <li style={{
