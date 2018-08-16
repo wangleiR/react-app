@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 //事件处理
-class Toggle extends  React.Component{
+class Toggle extends  Component{
 
 	constructor(props){
 		super(props);

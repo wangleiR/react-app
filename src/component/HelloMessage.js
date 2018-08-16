@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 
-class HelloMessage extends React.Component {
+class HelloMessage extends Component {
 	render() {
 		return (
 			<div>

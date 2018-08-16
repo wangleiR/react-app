@@ -6,7 +6,7 @@ const scaleNames = {
   f: 'Fahrenheit'
 };
 
-class Calculator extends React.Component {
+class Calculator extends Component {
     constructor(props) {
         super(props);
         this.handleCelsiusChange = this.handleCelsiusChange.bind(this);

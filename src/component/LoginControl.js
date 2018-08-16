@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 //条件渲染
-class LoginControl extends React.Component{
+class LoginControl extends Component{
 
 	constructor(props){
 		super(props);

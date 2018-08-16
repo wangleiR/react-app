@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 //状态和生命周期
-class Clock extends React.Component{
+class Clock extends Component{
 
 	constructor(props){
 		super(props);
