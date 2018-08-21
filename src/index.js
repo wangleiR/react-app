@@ -2,14 +2,27 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware} from 'redux'
 import todoApp from './redux/reducers'
 import TodoMVCApp from './redux/TodoMVCApp'
 import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-let store = createStore(todoApp)
+//add logger middleware for test
+const logger = store => next => action => {
+    console.group(action.type);
+    console.info('dispatching',action);
+    let result = next(action);
+    console.log('next state',store.getState());
+    console.groupEnd(action.type);
+    return result
+};
+
+let store = createStore(
+    todoApp,
+    applyMiddleware(logger)
+);
 
 render(
     <Provider store={store}>

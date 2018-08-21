@@ -26,7 +26,7 @@ const MainSection = ({todosCount, completeCount, actions}) =>
 
 MainSection.propTypes = {
     todosCount: PropTypes.number.isRequired,
-    completedCount: PropTypes.number.isRequired,
+    completeCount: PropTypes.number.isRequired,
     actions: PropTypes.object.isRequired
 }
 
