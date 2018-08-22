@@ -3,14 +3,18 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware} from 'redux'
+import thunkMiddleware from 'redux-thunk'
+import logger from 'redux-logger'
+
 import todoApp from './redux/reducers'
 import TodoMVCApp from './redux/TodoMVCApp'
 import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
 import App from './App';
+import Root from './middleware/containers/Root'
 import registerServiceWorker from './registerServiceWorker';
 
 //add logger middleware for test
-const logger = store => next => action => {
+const myLogger = store => next => action => {
     console.group(action.type);
     console.info('dispatching',action);
     let result = next(action);
@@ -21,7 +25,11 @@ const logger = store => next => action => {
 
 let store = createStore(
     todoApp,
-    applyMiddleware(logger)
+    applyMiddleware(
+        thunkMiddleware,
+        logger,//use logger from redux-logger
+        myLogger, //use logger by me function
+    )
 );
 
 render(
@@ -33,6 +41,7 @@ render(
                     <ul>
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/todoMVCApp'>ToDoMVC</Link></li>
+                        <li><Link to='/redditAPI'>Reddit API</Link></li>
                     </ul>
                 </nav>
             </header>
@@ -40,6 +49,7 @@ render(
                 <Switch>
                     <Route exact path="/" component={App} />
                     <Route path="/todoMVCApp" component={TodoMVCApp} />
+                    <Route path="/redditAPI" component={Root} />
                 </Switch>
             </div>
             </div>
@@ -49,8 +59,4 @@ render(
     document.getElementById('root')
 )
 registerServiceWorker();
-
-
-
-
 

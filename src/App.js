@@ -18,9 +18,9 @@ class App extends Component {
 
           <ReactComponentApp />
 
-          <footer className="App-footer">
-              <h1 className="App-footer-footer-style">the footer</h1>
-          </footer>
+          {/*<footer className="App-footer">*/}
+              {/*<h1 className="App-footer-footer-style">the footer</h1>*/}
+          {/*</footer>*/}
       </div>
       );
   }

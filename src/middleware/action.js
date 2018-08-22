@@ -11,7 +11,7 @@ export function selectSubreddit(subreddit) {
     }
 }
 
-export function invalidatesubreddit(subreddit) {
+export function invalidateSubreddit(subreddit) {
     return {
         type :INVALIDATE_SUBREDDIT,
         subreddit
